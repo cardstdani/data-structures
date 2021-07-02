@@ -1,6 +1,8 @@
 class stack():
-  def __init__(self, size):
+  def __init__(self, size=None):
     self.data = []
+    if size == None or size <= 0:
+      size = 1 
     for i in range(size):
       self.data.append(None)
     self.top = -1 
