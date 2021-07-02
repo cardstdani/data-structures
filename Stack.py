@@ -19,8 +19,9 @@ class stack():
     return None
   
   def pop(self):
-    self.data[self.top] = None
-    self.top -= 1    
+    if self.top > -1:
+      self.data[self.top] = None
+      self.top -= 1    
     return None
 
 myStack = stack(2)
