@@ -9,12 +9,16 @@ class stack():
   
   def __str__(self):
     return str(self.data)
+  
+  def getTop(self):
+    return self.data[self.top]
 
   def push(self, value):
-    self.top += 1
     if (self.top+1)>(len(self.data)-1):
       self.data.append(value)
+      self.top += 1
       return None
+    self.top += 1
     self.data[self.top] = value
     return None
   
@@ -29,3 +33,4 @@ myStack.push(1)
 myStack.push(1)
 print(myStack)
 print(myStack.top)
+print(myStack.getTop())
