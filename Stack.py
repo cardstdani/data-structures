@@ -2,7 +2,7 @@ class stack():
   def __init__(self, size=None):
     self.data = []
     if size == None or size <= 0:
-      size = 1 
+      size = 1    
     for i in range(size):
       self.data.append(None)
     self.top = -1 
@@ -11,19 +11,16 @@ class stack():
     return str(self.data)
 
   def push(self, value):
-    print(self.top)
-    print(len(self.data))
-    if (self.top+1)>(len(self.data)-1):
-      print("Error: Stack overflow")
-      return None
     self.top += 1
+    if (self.top+1)>(len(self.data)-1):
+      self.data.append(value)
+      return None
     self.data[self.top] = value
     return None
   
   def pop(self):
-    if self.top > -1:
-      self.data[self.top] = None
-      self.top -= 1    
+    self.data[self.top] = None
+    self.top -= 1    
     return None
 
 myStack = stack(2)
