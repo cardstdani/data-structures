@@ -42,7 +42,6 @@ def checkParenthesis(input):
       if s.getTop() == "[" and i == "]":
         s.pop()
         continue
-  print(s)
   if s.top == -1:
     return True
   else:
